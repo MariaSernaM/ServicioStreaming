@@ -1,0 +1,194 @@
+html {
+    box-sizing: border-box;
+    background-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+body {
+  background-image: url(Imagenes/fondo2.jpeg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+/* header */
+
+
+.title h1 {
+    padding: 30px 0;
+    text-align: center;
+    font-family: cursive;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: #000000;
+    width: 90%;
+    max-width: 1500px;
+    margin: 1.6em auto;
+    color: white;
+    border: 1px solid white;
+
+} 
+
+.header h2 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 2rem;
+    font-weight: 100;
+    text-transform: uppercase;
+
+}
+
+.container {
+
+    display: grid;
+    gap: 1.6em;
+    /* crear numero de columnas */
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* marcar los contenedores  */
+.container > .header,
+.container > .content,
+.container > .footer, 
+.container > div {
+    background-color: #000000;
+    padding: 20px;
+    border: 1px solid white;
+}
+
+/* ponemos el header y el footer de todo el margin */
+.container .header,
+.container .content,
+.container .footer{
+    /* grid-column: 1/6; se pone el header y el footer 1 solo para las 6 columnas */
+    grid-column: 1/6;
+    background-color: #000000;
+    color: white;
+}
+
+.content > .article {
+    background-color: rgb(0, 0, 0);
+    padding: 50px;
+    margin-top: 10px;
+    color: white;
+}
+
+.content .article .center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+.content .article h2{
+    padding: 10px;
+    font-family: cursive;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 100;
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.content .article img{
+    width: 100%;
+    margin-top: 5px;
+}
+.content .article p{
+    padding: 10px;
+    font-family: monospace;
+    font-weight: 100;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 1px solid navy;
+}
+
+.container > .related-post {
+    grid-column: span 5;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    height: 280px;
+    margin-top: 5px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+
+.related-post img.foto1{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    left: -150px;
+    bottom: -90px;
+}
+
+.related-post h2{
+    position: relative;
+    left: 50px;
+    bottom: 10px;
+    font-family: serif;
+}
+.container > .related-post:hover{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 128);
+    padding: 5px;
+}
+
+.related-post > .info1:hover{
+    color: white;
+}
+.related-post >.uno{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.related-post > .info1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+.footer a{
+    list-style: none;
+    text-decoration: none;
+    font-family: serif;
+    font-size: 2rem;
+}
+
+
+
+/* para hacerlo responsive */
+@media screen and (max-width: 768px){
+    .header{
+        text-align: center;
+    }
+    .container .content{
+        grid-column: 1/-1;
+    }
+
+    .container .sidebar{
+        grid-column: 1/-1;
+    }
+
+    .container .related-post{
+        grid-column: 1/-1;
+    }
+}
